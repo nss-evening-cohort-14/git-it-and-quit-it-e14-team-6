@@ -22,11 +22,36 @@
             </ul>
           </nav>
 
-          <div id=""></div>
+          <div class="jumbotron">
+            <h2 class="display-4">Software Packages</h2>
+            <img src="images/" alt="Software Packages Icon" style="height: 250px; width: 250px; padding: 1em;">
+            <p class="display-4" style="font-size: x-large;">Packages</p>
+            <hr class="my-4">
+          
+            <p style="font-weight: 600;">Click the button below to add a package!</p>
+          
+            <div class="lead">
+              <button id="add-package" type="submit" class="btn btn-primary btn-lg">Add Package</button>
+              <div id="form" class="d-flex justify-content-center" style="padding: 1.5em;"></div>
+            </div>
+            <div id="student-title" class="d-flex justify-content-center">Developers</div>
+          </div>
+
+          <div id="package-container">
+              <div id="form" class="d-flex justify-content-center" style="padding: 1.5em;"></div>
+              
+              <div id="packages" class="d-flex flex-wrap"></div>
+              
+              <div id="developers" class="d-flex justify-content-center"></div>
+              
+              <div id="deletedDev-title" class="d-flex justify-content-center">Deleted Developers</div>
+              
+              <div id="deletedDevs" class="d-flex flex-wrap"></div>
+          </div>
 
 
+          
       <footer>&copy;2021 SEAL TEAM 6</footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="/main.js"></script>
