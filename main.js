@@ -15,48 +15,72 @@ const projects = [];
 // Deleted Projects Array
 const deletedProjects = [];
 
-// Print to DOM function
-const printToDom = () => {
+const pinnedRepos = [
+  {
+  title: "my repo",
+  aboutRepo: "this is my favorite repo",
+  repoLink: "https://github.com/nathanmartin5937/sorting-hat" 
+  }
+];
+
+const deletePinnedRepo = [
+
+];
+
+const printToDom = (divId, textToPrint) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = textToPrint;
 
 };
 
-// Card Information Form
-const cardInfo = function (event) {
-  event.preventDefault();
-
-};
-
-// Card Input Information Form
-const cardForm = function () {
+const pinBuilder = (taco) => {
   let domString = "";
+  taco.forEach((item, i) => {
+      domString += `<div id=${i} class="card">
+            <div class="card-body">
+                  <p class="cardText">${item.title}</p>
+                  <p class="cardText">${item.aboutRepo}</p>
+                  <p class="cardText">${item.repoLink}</p>
+                  <button type="button" id=${i} class="btn btn-primary" id="deleteBtn">Delete</button>
+            </div>
+          </div>`
+  });
 
+  printToDom("#pins", domString);
 };
 
-
-
-
-
-
-
-
-
-// Delete Card Function
-const deleteCard = () => {
-
+const handleBtnClick = (e) => {
+  const btnId = e.target.id;
+  if(btnId === "submitBtn") {
+      document.getElementById("infoForm").style.visibility = "visible"
+  }        
 };
 
-// Click Event Function that listens to the buttons (onClick)
+const pullForm = (e) => {
+  e.preventDefault();
+
+  const pinnedRepos = document.querySelector("#titleName").value;
+
+  const Object = {
+    title,
+    aboutRepo,
+    repoLink,
+};
+
+// // Delete Card Function
+// const deleteCard = () => {
+
+};
 const clickEvents = function () {
-  document.querySelector("").addEventListener("click", deleteCard);
-  document.querySelector("").addEventListener("click",);
-  document.querySelector("").addEventListener("click",);
-  document.querySelector("").addEventListener("click",);
+  // document.querySelector("").addEventListener("click", deleteCard);
+  // document.querySelector("#pins").addEventListener("click", pinBuilder);
+  document.querySelector('form').addEventListener('submitBtn', pullForm);
+  // document.querySelector("").addEventListener("click",);
 };
 
-
-// Initializes all other Functions to run
 const initialize = () => {
   clickEvents();
+  pinBuilder(pinnedRepos);
 };
-// Invokes the Initialize Function
-// initialize();
+
+initialize();
