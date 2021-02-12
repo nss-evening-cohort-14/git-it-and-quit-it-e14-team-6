@@ -16,16 +16,12 @@ const projects = [];
 const deletedProjects = [];
 
 const pinnedRepos = [
-  {
-  title: "my repo",
-  aboutRepo: "this is my favorite repo",
-  repoLink: "https://github.com/nathanmartin5937/sorting-hat" 
-  }
+ 
 ];
 
-const deletePinnedRepo = [
+// const deletePinnedRepo = [
 
-];
+// ];
 
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
@@ -36,12 +32,12 @@ const printToDom = (divId, textToPrint) => {
 const pinBuilder = (taco) => {
   let domString = "";
   taco.forEach((item, i) => {
-      domString += `<div id=${i} class="card">
+      domString += `<div id="${i}" class="card">
             <div class="card-body">
                   <p class="cardText">${item.title}</p>
                   <p class="cardText">${item.aboutRepo}</p>
                   <p class="cardText">${item.repoLink}</p>
-                  <button type="button" id=${i} class="btn btn-primary" id="deleteBtn">Delete</button>
+                  <button type="button" id="${i}" class="btn btn-primary" id="deleteBtn">Delete</button>
             </div>
           </div>`
   });
@@ -51,30 +47,35 @@ const pinBuilder = (taco) => {
 
 const handleBtnClick = (e) => {
   const btnId = e.target.id;
-  if(btnId === "submitBtn") {
-      document.getElementById("infoForm").style.visibility = "visible"
-  }        
+  if (btnId === "submitBtn") {
+    document.getElementById("infoForm").style.visibility = "visible";
+  }
+    document.getElementById("submitBtn").addEventListener("click", pullForm)       
 };
 
 const pullForm = (e) => {
   e.preventDefault();
 
-  const pinnedRepos = document.querySelector("#titleName").value;
-
-  const Object = {
+  const title = document.querySelector("#title").value;
+  const aboutRepo = document.querySelector('#aboutRepo').value;
+  const repoLink = document.querySelector('#repoLink').value;
+  
+  const objects = {
     title,
     aboutRepo,
     repoLink,
 };
 
-// // Delete Card Function
-// const deleteCard = () => {
-
+    pinnedRepos.push(objects); 
+    pinBuilder(pinnedRepos);
+    document.querySelector('form').reset();  
 };
+
 const clickEvents = function () {
+  document.querySelector("#submitBtn").addEventListener("click", handleBtnClick);
+  document.querySelector("form").addEventListener("submitBtn", pullForm);
+  document.querySelector("#pins").addEventListener("click", pinBuilder);
   // document.querySelector("").addEventListener("click", deleteCard);
-  // document.querySelector("#pins").addEventListener("click", pinBuilder);
-  document.querySelector('form').addEventListener('submitBtn', pullForm);
   // document.querySelector("").addEventListener("click",);
 };
 

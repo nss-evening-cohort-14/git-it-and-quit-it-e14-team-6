@@ -20,14 +20,24 @@
             <li class="nav-item"><a href="./Projects.html">Projects</a></li>
           </ul>
         </nav>
-
+        
+      <div id="infoForm">
         <form>
-          <div id="infoForm" style="display: block;"> 
-            <label for="title">Plaese enter title here</label>
-            <input type="text" id="titleName" required>
-            <button type="submit" id="submitBtn">Submit
+          <div class="formTitle">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" required>
           </div>
+          <div class="formRepo">
+            <label for="aboutRepo">About Repo</label>
+            <input type="text" class="form-control" id="aboutRepo" required>
+          </div>
+          <div class="formLink">
+            <label for="repoLink">Repo Link</label>
+            <input type="text" class="form-control" id="repoLink" required>
+          </div>
+          <button type="submit" id="submitBtn">Submit</button>
         </form>
+      </div>
         
         <div class="cardContainer" id="pins"></div>
 
