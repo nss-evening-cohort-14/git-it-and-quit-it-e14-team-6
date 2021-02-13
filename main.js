@@ -1,37 +1,17 @@
 console.log("CONNECTED");
 
-// Repositories Array
-const repositories = [];
-// Deleted Repositories Array
-const deletedRepositories = [];
-
-// Packages Array
-const packages = [];
-// Deleted Packages Array
-const deletedPackages = [];
-
-// Projects Array
-const projects = [];
-// Deleted Projects Array
-const deletedProjects = [];
-
-const pinnedRepos = [
- 
-];
-
-// const deletePinnedRepo = [
-
-// ];
-
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint;
 
 };
 
-const pinBuilder = (taco) => {
+// *************************START OVERVIEW PAGE***********************
+const pinnedRepos = [];
+
+const pinBuilder = () => {
   let domString = "";
-  taco.forEach((item, i) => {
+  pinnedRepos.forEach((item, i) => {
       domString += `<div id="${i}" class="card">
             <div class="card-body">
                   <p class="cardText">${item.title}</p>
@@ -46,11 +26,7 @@ const pinBuilder = (taco) => {
 };
 
 const handleBtnClick = (e) => {
-  const btnId = e.target.id;
-  if (btnId === "submitBtn") {
-    document.getElementById("infoForm").style.visibility = "visible";
-  }
-    document.getElementById("submitBtn").addEventListener("click", pullForm)       
+  const btnId = e.target.id;     
 };
 
 const pullForm = (e) => {
@@ -71,17 +47,27 @@ const pullForm = (e) => {
     document.querySelector('form').reset();  
 };
 
-const clickEvents = function () {
-  document.querySelector("#submitBtn").addEventListener("click", handleBtnClick);
-  document.querySelector("form").addEventListener("submitBtn", pullForm);
-  document.querySelector("#pins").addEventListener("click", pinBuilder);
-  // document.querySelector("").addEventListener("click", deleteCard);
-  // document.querySelector("").addEventListener("click",);
-};
+const cardRemoval = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
 
-const initialize = () => {
-  clickEvents();
+          if (targetType === "button") {
+          pinnedRepos.splice(targetId, 1);
+          }
+
   pinBuilder(pinnedRepos);
 };
 
-initialize();
+// ************************END OVERVIEW PAGE************************ 
+
+const clickEvents = () => {
+  document.querySelector("#infoForm").addEventListener("submit", pullForm);
+  document.querySelector("#pins").addEventListener("click", cardRemoval);
+};
+
+const init = () => {
+  clickEvents();
+  pinBuilder();
+};
+
+init();
