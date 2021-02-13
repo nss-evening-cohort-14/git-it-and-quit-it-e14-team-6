@@ -24,6 +24,7 @@ const createRepoCard = () => {
                   </div>`;
   })
   printToDom("#repos", domString);
+  
 };
 
 // FUNCTION TO RETRIEVE INFO FOR NEW REPO CARD
@@ -53,7 +54,7 @@ const delRepo = (e) => {
   createRepoCard(newRepo);
 };
 const repoEvents = () => {
-  document.querySelector("#enterBtn").addEventListener("submit", getFormInfo);
+  document.querySelector("#newRepoForm").addEventListener("submit", getFormInfo);
   document.querySelector("#repos").addEventListener("click", delRepo); 
 };
 
@@ -111,13 +112,22 @@ const cardRemoval = (e) => {
 
 // ************************END OVERVIEW PAGE************************ 
 
+
+
+const pinnedEvents = () => {
+  document.querySelector("#infoForm").addEventListener("submit", pullForm);
+  document.querySelector("#pins").addEventListener("click", cardRemoval);
+};
+
+// ************************END OVERVIEW PAGE************************ 
+
 const pageFinder = () => {
   const pageFile = location.pathname.split("/").slice(-1);
 
   if (pageFile[0] === "index.html") {
     pinBuilder();
     pinnedEvents();
-  } else if (pageFile[0] === "repos.html") {
+  } else if (pageFile[0] === "repo.html") {
     createRepoCard();
     // getFormInfo();
     repoEvents();
@@ -129,14 +139,8 @@ const pageFinder = () => {
   } else {
     pinBuilder();
     pinnedEvents();
-  }   
-};
-
-
-const clickEvents = () => {
-  // document.querySelector("#infoForm").addEventListener("submit", pullForm);
-  // document.querySelector("#pins").addEventListener("click", cardRemoval);
-};
+  }
+}
 
 const initialize = () => {
   pageFinder();
