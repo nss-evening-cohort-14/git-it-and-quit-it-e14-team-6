@@ -65,9 +65,9 @@ const clickEvents = () => {
   document.querySelector("#pins").addEventListener("click", cardRemoval);
 };
 
-const init = () => {
+const initialize = () => {
   clickEvents();
   pinBuilder();
 };
 
-init();
+initialize();
