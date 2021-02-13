@@ -1,6 +1,5 @@
 console.log("CONNECTED");
 
-<<<<<<< HEAD
 // Print to DOM function
 const printToDom = (divId, printText) => {
   const selectedDivId = document.querySelector(divId);
@@ -118,12 +117,6 @@ const deletePackage = function (e) {
   }
   devCardBuilder(devArray);
   deletePackageCard(deletedDevsArray);
-=======
-const printToDom = (divId, textToPrint) => {
-  const selectedDiv = document.querySelector(divId);
-  selectedDiv.innerHTML = textToPrint;
-  
->>>>>>> main
 };
 const packageEvents = () => {
   document.querySelector("#add-package").addEventListener("click", buttonClick);
@@ -150,13 +143,10 @@ const pinBuilder = () => {
   printToDom("#pins", domString);
 };
 
-<<<<<<< HEAD
 const handleBtnClick = (e) => {
   const btnId = e.target.id;
 };
 
-=======
->>>>>>> main
 const pullForm = (e) => {
   e.preventDefault();
 
@@ -185,19 +175,12 @@ const cardRemoval = (e) => {
 
   pinBuilder(pinnedRepos);
 };
-<<<<<<< HEAD
-// Click Event Function that listens to the buttons (onClick)
-const clickEvents = () => {
-=======
 
 const pinnedEvents = () => {
->>>>>>> main
   document.querySelector("#infoForm").addEventListener("submit", pullForm);
   document.querySelector("#pins").addEventListener("click", cardRemoval);
 };
 // ************************END OVERVIEW PAGE************************ 
-
-
 
 // ************************END OVERVIEW PAGE************************ 
 
@@ -223,12 +206,7 @@ const pageFinder = () => {
 }
 
 const initialize = () => {
-<<<<<<< HEAD
-  // clickEvents();
-  packageEvents();
-=======
   pageFinder();
->>>>>>> main
 };
 // Invokes the Initialize Function
 initialize();
