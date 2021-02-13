@@ -7,6 +7,11 @@ const printToDom = (divId, textToPrint) => {
 };
 
 // ************* PACKAGES START *******************
+<<<<<<< HEAD
+=======
+// Packages Array
+const packages = ["VSC", "SQL", "BOOTSTRAP", "GitHub", "JavaScript", "HTML", "CSS"];
+>>>>>>> b7c43cd2c1bcf01d6042967412c90acf9d486d15
 // Developer Array
 const devArray = [];
 // Deleted Developer Array
