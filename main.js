@@ -180,7 +180,6 @@ const pinnedEvents = () => {
   document.querySelector("#infoForm").addEventListener("submit", pullForm);
   document.querySelector("#pins").addEventListener("click", cardRemoval);
 };
-// ************************END OVERVIEW PAGE************************ 
 
 // ************************END OVERVIEW PAGE************************ 
 
