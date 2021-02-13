@@ -3,7 +3,7 @@ console.log("CONNECTED");
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint;
-
+  
 };
 
 // *************************START OVERVIEW PAGE***********************
@@ -23,10 +23,6 @@ const pinBuilder = () => {
   });
 
   printToDom("#pins", domString);
-};
-
-const handleBtnClick = (e) => {
-  const btnId = e.target.id;     
 };
 
 const pullForm = (e) => {
@@ -58,16 +54,36 @@ const cardRemoval = (e) => {
   pinBuilder(pinnedRepos);
 };
 
-// ************************END OVERVIEW PAGE************************ 
-
-const clickEvents = () => {
+const pinnedEvents = () => {
   document.querySelector("#infoForm").addEventListener("submit", pullForm);
   document.querySelector("#pins").addEventListener("click", cardRemoval);
 };
 
+// ************************END OVERVIEW PAGE************************ 
+
+const pageFinder = () => {
+  const pageFile = location.pathname.split("/").slice(-1);
+
+  if (pageFile[0] === "index.html") {
+    pinBuilder();
+    pinnedEvents();
+  } else if (pageFile[0] === "repo.html") {
+    createRepoCard();
+    // getFormInfo();
+    repoEvents();
+  } else if (pageFile[0] === "packages.html") {
+    devCardBuilder();
+    packageEvents();
+  } else if (pageFile[0] === "projects.html") {
+
+  } else {
+    pinBuilder();
+    pinnedEvents();
+  }
+}
+
 const initialize = () => {
-  clickEvents();
-  pinBuilder();
+  pageFinder();
 };
 
 initialize();
