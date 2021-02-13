@@ -1,10 +1,11 @@
 console.log("CONNECTED");
 
-// Repositories Array
-const repositories = [];
-// Deleted Repositories Array
-const deletedRepositories = [];
-
+// Print to DOM function
+const printToDom = (divId, printText) => {
+  const selectedDivId = document.querySelector(divId);
+  selectedDivId.innerHTML = printText;
+};
+// ************* PACKAGES START *******************
 // Packages Array
 const packages = ["VSC", "SQL", "BOOTSTRAP", "GitHub", "JavaScript", "HTML", "CSS"];
 // Developer Array
@@ -12,17 +13,6 @@ const devArray = [];
 // Deleted Developer Array
 const deletedDevsArray = [];
 
-// Projects Array
-const projects = [];
-// Deleted Projects Array
-const deletedProjects = [];
-
-// Print to DOM function
-const printToDom = (divId, printText) => {
-  const selectedDivId = document.querySelector(divId);
-  selectedDivId.innerHTML = printText;
-};
-// ************* PACKAGES START *******************
 // Developer Packages Card Builder
 const devCardBuilder = (dArray) => {
   let domString = "";
@@ -33,7 +23,8 @@ const devCardBuilder = (dArray) => {
                       <h5 ${item.name} class="card-text">Name: ${item.name}</h5>
                       <p class="card-text">Profile: ${item.gitName}</p>
                       <p class="card-text">Package: ${item.package}</p>
-                      <button type="button" class="btn btn-danger" id="${i}">Delete</button>
+                      <div id="html-icon"><img src="./images/html-bracket.png" alt="HTML Icon"></div>
+                      <button type="button" class="btn btn-danger" id="${i}" style="padding: 5px;">Delete</button>
                     </div>
                   </div>`;
   })
@@ -54,7 +45,6 @@ const buttonClick = (e) => {
       <input type="text" class="form-control" id="gitName"></input>
       <div>Software Package</div>
       <input type="text" class="form-control" id="packName"></input>
-      
       <div class="text">Add Form</div>
       <button id="submitBut" type="button" class="btn btn-primary">Submit</button>
     </div>
@@ -86,15 +76,16 @@ const deletePackageCard = (deleteArray) => {
   let deletedDom = "";
   deleteArray.forEach((item, i) => {
     deletedDom += `
-    <div id="expel-card" class="card mb-3" style="width: 18rem;" id=${i}>
+    <div id="delete-card" class="card my-2" style="width: 18rem;" id=${i}>
       <div class="card-body">
-        <h5>REMOVED!</h5>
+        <h5>DELETED!</h5>
         <h5 class="card-text">${item.name}</h5>
         <p class="card-text">${item.gitName}</p>
         <p class="card-text">${item.package}</p>
-          <div class="h5 card-text text-dark">Developer Removed</div>
-        </div>
-      </div>`;
+        <div class="h5 card-text text-dark">Profile Removed</div>
+      </div>
+      <img id="no-sign" src="./images/no-sign.jpg" alt="No Sign">
+    </div>`;
   })
   printToDom("#deletedDevs", deletedDom);
 };
@@ -116,10 +107,11 @@ const deletePackage = function (e) {
   if (devArray.length === 0) {
     const deletedD = `
       <div class="card-body">
+        <div id="api-icon"><img src="./images/API.png" alt="API Icon"></div>
         <br>
         <div id="packages">All Package Profiles have been deleted!</div>
     </div>`;
-    printToDom("#packages", deletedD);
+    printToDom("#zero-devs", deletedD);
     deleteDisplay();
   }
   devCardBuilder(devArray);
@@ -127,29 +119,8 @@ const deletePackage = function (e) {
 };
 // ************* PACKAGES END *******************
 
-// Card Information Form
-const cardInfo = function (event) {
-  event.preventDefault();
-
-  const name = document.querySelector()
-
-};
-
-// Card Input Information Form
-const cardForm = function () {
-  let domString = "";
-
-};
-
-// Delete Card Function
-const deleteCard = () => {
-
-};
-
 // Click Event Function that listens to the buttons (onClick)
 const clickEvents = function () {
-  // document.querySelector("#developers").addEventListener("click", deleteCard);
-  // document.querySelector("").addEventListener("click",);
   document.querySelector("#add-package").addEventListener("click", buttonClick);
   document.querySelector("#developers").addEventListener("click", deletePackage);
 };

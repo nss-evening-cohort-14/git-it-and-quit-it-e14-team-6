@@ -1,4 +1,74 @@
 body {
   background-color: bisque;
   padding: 20px;
+  margin: 6px;
+}
+
+header {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+footer {
+  display: flexbox;
+  text-align: start;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.display-4 {
+  text-align: center;
+  font-weight: 600;
+}
+
+.card-body {
+  background-color: rgb(128, 125, 125);
+  text-align: center;
+  font-weight: 600;
+  padding: 10px;
+}
+
+#developers {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#html-icon {
+  background-color: rgb(128, 125, 125);
+  width: auto;
+  height: auto;
+  padding: 10px;
+}
+
+#dev-title {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+#deletedDev-title {
+  font-weight: 600;
+  font-size: 30px;
+  padding: 10px;
+}
+
+#deletedDevs {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+#no-sign {
+  background-color: rgb(128, 125, 125);
+  padding: 10px;
+}
+
+#zero-devs {
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  padding: 5px;
 }
