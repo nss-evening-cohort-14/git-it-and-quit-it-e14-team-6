@@ -58,10 +58,6 @@ const delRepo = (e) => {
   createRepoCard(newRepo);
 };
 
-// Delete Card Function
-const deleteCard = () => {
-};
-
 // ********************* REPOS END **************************
 
 // Click Event Function that listens to the buttons (onClick)
