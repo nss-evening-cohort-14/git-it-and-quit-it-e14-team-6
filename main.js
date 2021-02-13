@@ -1,10 +1,11 @@
 console.log("CONNECTED");
 
 // Print to DOM function
-const printToDom = (divId, printText) => {
-  const selectedDivId = document.querySelector(divId);
-  selectedDivId.innerHTML = printText;
+const printToDom = (divId, textToPrint) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = textToPrint;
 };
+
 // ************* PACKAGES START *******************
 // Packages Array
 const packages = ["VSC", "SQL", "BOOTSTRAP", "GitHub", "JavaScript", "HTML", "CSS"];
@@ -14,10 +15,10 @@ const devArray = [];
 const deletedDevsArray = [];
 
 // Developer Packages Card Builder
-const devCardBuilder = (dArray) => {
+const devCardBuilder = () => {
   let domString = "";
   // For Loop
-  dArray.forEach((item, i) => {
+  devArray.forEach((item, i) => {
     domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
                     <div class="card-body">
                       <h5 ${item.name} class="card-text">Name: ${item.name}</h5>
@@ -124,6 +125,58 @@ const packageEvents = () => {
 };
 // ************* PACKAGES END *******************
 
+// **************** REPOS START *********************
+const newRepo = [];
+
+const deletedRepos = [];
+
+// FUNCTION TO CREATE REPO CARD
+const createRepoCard = () => {
+  let domString = '';
+  newRepo.forEach((item, i) => {
+    domString += `<div class="card m-2" style="width: 18rem; id=${i}">
+                    <div class="card-body">
+                      <h5 class="card-title">${item.name}</h5>
+                      <p class="card-text">${item.desc}</p>
+                      <button type="button" id="${i}" class="btn btn-danger">Delete Repo</button>
+                    </div>
+                  </div>`;
+  })
+  printToDom("#repos", domString);
+};
+
+// FUNCTION TO RETRIEVE INFO FOR NEW REPO CARD
+const getFormInfo = (e) => {
+  e.preventDefault();
+  const name = document.querySelector("#name").value;
+  const desc = document.querySelector("#desc").value;
+
+  const obj = {
+    name,
+    desc,
+  }
+
+  newRepo.push(obj);
+
+  createRepoCard(newRepo);
+  document.querySelector("#newRepoForm").reset();
+};
+// FUNCTION TO DELETE REPOS
+const delRepo = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+  if (targetType === 'button') {
+
+    newRepo.splice(targetId, 1);
+  }
+  createRepoCard(newRepo);
+};
+const repoEvents = () => {
+  document.querySelector("#newRepoForm").addEventListener("submit", getFormInfo);
+  document.querySelector("#repos").addEventListener("click", delRepo);
+};
+// ********************* REPOS END **************************
+
 // *************************START OVERVIEW PAGE***********************
 const pinnedRepos = [];
 
@@ -143,9 +196,6 @@ const pinBuilder = () => {
   printToDom("#pins", domString);
 };
 
-const handleBtnClick = (e) => {
-  const btnId = e.target.id;
-};
 
 const pullForm = (e) => {
   e.preventDefault();
@@ -180,7 +230,6 @@ const pinnedEvents = () => {
   document.querySelector("#infoForm").addEventListener("submit", pullForm);
   document.querySelector("#pins").addEventListener("click", cardRemoval);
 };
-
 // ************************END OVERVIEW PAGE************************ 
 
 const pageFinder = () => {
