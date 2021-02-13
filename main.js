@@ -196,7 +196,6 @@ const pinBuilder = () => {
   printToDom("#pins", domString);
 };
 
-
 const pullForm = (e) => {
   e.preventDefault();
 
