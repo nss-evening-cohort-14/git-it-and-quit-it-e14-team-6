@@ -35,7 +35,7 @@ const buttonClick = (e) => {
   let buttonId = (e.target.id);
 
   if (buttonId === "add-package") {
-    document.querySelector("#form").innerHTML = `
+    document.querySelector("#form-package").innerHTML = `
   <form id="inputForm">
     <div class="card-body">
       <h5 class="card-title">New Developer</h5>
@@ -46,11 +46,11 @@ const buttonClick = (e) => {
       <div>Software Package</div>
       <input type="text" class="form-control" id="packName"></input>
       <div class="text">Add Form</div>
-      <button id="submitBut" type="button" class="btn btn-primary">Submit</button>
+      <button id="subBut" type="button" class="btn btn-primary">Submit</button>
     </div>
   </form>`
   }
-  document.querySelector("#submitBut").addEventListener("click", packageInfoCard)
+  document.querySelector("#subBut").addEventListener("click", packageInfoCard)
 };
 
 const packageInfoCard = (event) => {
@@ -70,6 +70,7 @@ const packageInfoCard = (event) => {
   };
   devArray.push(packageObj);
   devCardBuilder(devArray);
+  document.querySelector("#inputForm").reset();
 };
 
 const deletePackageCard = (deleteArray) => {
@@ -117,7 +118,12 @@ const deletePackage = function (e) {
   devCardBuilder(devArray);
   deletePackageCard(deletedDevsArray);
 };
+const packageEvents = () => {
+  document.querySelector("#add-package").addEventListener("click", buttonClick);
+  document.querySelector("#developers").addEventListener("click", deletePackage);
+};
 // ************* PACKAGES END *******************
+
 // *************************START OVERVIEW PAGE***********************
 const pinnedRepos = [];
 
@@ -169,20 +175,18 @@ const cardRemoval = (e) => {
 
   pinBuilder(pinnedRepos);
 };
-// ************************END OVERVIEW PAGE************************ 
-
 // Click Event Function that listens to the buttons (onClick)
 const clickEvents = () => {
-  document.querySelector("#add-package").addEventListener("click", buttonClick);
-  document.querySelector("#developers").addEventListener("click", deletePackage);
-
   document.querySelector("#infoForm").addEventListener("submit", pullForm);
   document.querySelector("#pins").addEventListener("click", cardRemoval);
 };
+// ************************END OVERVIEW PAGE************************ 
+
+
 
 const initialize = () => {
-  clickEvents();
-  pinBuilder();
+  // clickEvents();
+  packageEvents();
 };
 // Invokes the Initialize Function
 initialize();
