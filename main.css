@@ -72,3 +72,29 @@ footer {
   font-size: 30px;
   padding: 5px;
 }
+
+/* ************OVERVIEW***********  */
+
+#infoForm {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  width: 75%;
+  font-size: 25px;
+  background-color: grey;
+  border: 2px solid black; 
+  margin: 20px;
+}
+
+#pinTitle {
+  text-align: left;
+}
+
+#pins {
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* ************OVERVIEW************* */

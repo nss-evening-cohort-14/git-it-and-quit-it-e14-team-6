@@ -6,7 +6,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
   <link rel="stylesheet" href="main.css">
-  <title>Git it and quit it</title>
+  <title>Git It and Quit It</title>
 </head>
 <body>
 
@@ -19,23 +19,34 @@
           </ul>
         </nav>
         <header>OVERVIEW</header>
-        
+      
+
       <div id="infoForm">
+          
         <form>
-          <div class="formTitle">
+          <h3 id="pinTitle">PINNED REPO'S</h3>
+          <div class="formTitle" style="display: block;">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" required>
           </div>
-          <div class="formRepo">
-            <label for="aboutRepo">About Repo</label>
-            <input type="text" class="form-control" id="aboutRepo" required>
-          </div>
-          <div class="formLink">
+          <div class="formLink" style="display: block;">
             <label for="repoLink">Repo Link</label>
             <input type="text" class="form-control" id="repoLink" required>
           </div>
           <button type="submit" id="submitBtn">Submit</button>
         </form>
+      </div>
+
+      <div class="cardProfile" style="width: 18rem;">
+        <img src="https://static.thenounproject.com/png/630729-200.png" class="card-img-top" alt="Profile Icon">
+        <div class="card-body">
+          <h5 class="card-title">Profile</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">About</li>
+          <li class="list-group-item">Work History</li>
+          <li class="list-group-item">Contact</li>
+        </ul>
       </div>
         
       <div class="cardContainer" id="pins"></div>
