@@ -82,7 +82,6 @@ footer {
 #infoForm {
   display: inline-flex;
   flex-direction: column;
-  /* float: right; */
   width: 75%;
   font-size: 25px;
   background-color: bisque;
