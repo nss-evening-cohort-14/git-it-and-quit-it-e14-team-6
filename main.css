@@ -13,7 +13,11 @@ header {
 footer {
   display: flex;
   text-align: start;
+  position: fixed;
+  bottom: 0;
 }
+
+/* *************PACKAGES************* */
 
 .jumbotron {
   text-align: center;
@@ -72,6 +76,43 @@ footer {
   font-size: 30px;
   padding: 5px;
 }
+
+/* ************OVERVIEW***********  */
+
+#infoForm {
+  display: inline-flex;
+  flex-direction: column;
+  width: 75%;
+  font-size: 25px;
+  background-color: bisque;
+  margin: 20px;
+}
+
+.formTitle {
+  padding: 25px;
+}
+
+.formLink {
+  padding: 25px;
+}
+
+#submitBtn {
+  margin: 15px;
+}
+
+#pinTitle {
+  text-align: left;
+}
+
+#pins {
+  font-size: 20px;
+  margin: 5px;
+  background-color: bisque;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 #profile {
   padding: 10px;
 }

@@ -186,7 +186,6 @@ const pinBuilder = () => {
     domString += `<div id="${i}" class="card">
             <div class="card-body">
                   <p class="cardText">${item.title}</p>
-                  <p class="cardText">${item.aboutRepo}</p>
                   <p class="cardText">${item.repoLink}</p>
                   <button type="button" id="${i}" class="btn btn-primary" id="deleteBtn">Delete</button>
             </div>
@@ -200,12 +199,10 @@ const pullForm = (e) => {
   e.preventDefault();
 
   const title = document.querySelector("#title").value;
-  const aboutRepo = document.querySelector('#aboutRepo').value;
   const repoLink = document.querySelector('#repoLink').value;
 
   const objects = {
     title,
-    aboutRepo,
     repoLink,
   };
 
