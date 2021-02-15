@@ -12,8 +12,10 @@ header {
 
 footer {
   display: flexbox;
-  text-align: start;
+  text-align: start; 
 }
+
+/* *************PACKAGES************* */
 
 .jumbotron {
   text-align: center;
@@ -84,6 +86,18 @@ footer {
   background-color: grey;
   border: 2px solid black; 
   margin: 20px;
+}
+
+.formTitle {
+  padding: 25px;
+}
+
+.formLink {
+  padding: 25px;
+}
+
+#submitBtn {
+  margin: 15px;
 }
 
 #pinTitle {
