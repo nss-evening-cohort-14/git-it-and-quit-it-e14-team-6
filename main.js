@@ -7,26 +7,7 @@ const printToDom = (divId, textToPrint) => {
 };
 
 // ************* PACKAGES START *******************
-const package = [
-  {
-    name: "Martin",
-    gitName: "fimoefive",
-    package: "HTML",
-    id: 0,
-  },
-  {
-    name: "Nathan M.",
-    gitName: "nathanmartin5937",
-    package: "HTML",
-    id: 1,
-  },
-  {
-    name: "Nathan K.",
-    gitName: "nashvegasnate",
-    package: "CSS",
-    id: 2,
-  },
-];
+
 // Developer Array
 const devArray = [];
 // Deleted Developer Array
@@ -247,6 +228,68 @@ const pinnedEvents = () => {
   document.querySelector("#pins").addEventListener("click", cardRemoval);
 };
 // ************************END OVERVIEW PAGE************************ 
+// *********************** START PROJECTS PAGE ***************************
+
+const projects = [
+  {
+    name: "Martin",
+    gitName: "fimoefive",
+    project: "Team Project",
+  },
+  {
+    name: "Nathan M.",
+    gitName: "nathanmartin5937",
+    project: "Sorting Hat",
+  },
+  {
+    name: "Nathan K.",
+    gitName: "nashvegasnate",
+    project: "Personal Bio",
+  },
+];
+
+const projectCard = function () {
+  return `<div class="card my-2" style="width: 18rem;" id=${i}>
+        <div class="card-body">
+          <h5 class="card-text">Name: ${item.name}</h5>
+          <p class="card-text">Profile: ${item.gitName}</p>
+          <p class="card-text">Package: ${item.project}</p>
+          <div id="html-icon"><img src="./images/html-bracket.png" alt="HTML Icon"></div>
+          <button type="button" class="btn btn-danger" id="${i}" style="padding: 5px;">Delete</button>
+        </div>
+      </div>`;
+};
+
+const projectForm = function () {
+  let domString = `<form id="inputForm">
+    <div class="card-body">
+      <h5 class="card-title">New Developer</h5>
+      <div>Name</div>
+      <input type="text" class="form-control" id="devName"></input>
+      <div>GitHub Profile</div>
+      <input type="text" class="form-control" id="gitName"></input>
+      <div>Software Package</div>
+      <input type="text" class="form-control" id="projectName"></input>
+      <div class="text">Add Form</div>
+      <button id="subBut" type="button" class="btn btn-primary">Submit</button>
+    </div>
+  </form>`;
+  printToDom("#projectForm", domString);
+  document.querySelector("form").addEventListener("click", projectsInfo);
+};
+
+const projectsInfo = function (event) {
+  event.preventDefault();
+
+  const name = document.querySelector("#devName").value;
+  const gitName = document.querySelector("#gitName").value;
+  const project = document.querySelector("#projectName").value;
+
+};
+
+
+
+// *********************** END PROJECTS PAGE ***************************
 
 const profileCard = () => {
   let profileString = `
