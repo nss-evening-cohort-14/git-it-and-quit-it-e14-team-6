@@ -248,12 +248,12 @@ const projects = [
   },
 ];
 
-const projectCard = function () {
+const projectCard = function (item, i) {
   return `<div class="card my-2" style="width: 18rem;" id=${i}>
         <div class="card-body">
           <h5 class="card-text">Name: ${item.name}</h5>
           <p class="card-text">Profile: ${item.gitName}</p>
-          <p class="card-text">Package: ${item.project}</p>
+          <p class="card-text">Project: ${item.project}</p>
           <div id="html-icon"><img src="./images/html-bracket.png" alt="HTML Icon"></div>
           <button type="button" class="btn btn-danger" id="${i}" style="padding: 5px;">Delete</button>
         </div>
@@ -261,21 +261,22 @@ const projectCard = function () {
 };
 
 const projectForm = function () {
-  let domString = `<form id="inputForm">
+  let domString = `
+  <form id="inputForm">
     <div class="card-body">
       <h5 class="card-title">New Developer</h5>
       <div>Name</div>
       <input type="text" class="form-control" id="devName"></input>
       <div>GitHub Profile</div>
       <input type="text" class="form-control" id="gitName"></input>
-      <div>Software Package</div>
+      <div>Project</div>
       <input type="text" class="form-control" id="projectName"></input>
       <div class="text">Add Form</div>
-      <button id="subBut" type="button" class="btn btn-primary">Submit</button>
+      <button id="subB" type="button" class="btn btn-primary">Submit</button>
     </div>
   </form>`;
   printToDom("#projectForm", domString);
-  document.querySelector("form").addEventListener("click", projectsInfo);
+  document.querySelector("#subB").addEventListener("click", projectsInfo);
 };
 
 const projectsInfo = function (event) {
@@ -285,8 +286,39 @@ const projectsInfo = function (event) {
   const gitName = document.querySelector("#gitName").value;
   const project = document.querySelector("#projectName").value;
 
+  const obj = {
+    name,
+    gitName,
+    project,
+  }
+
+  projects.push(obj);
+  buildCard(projects, projectCard, "#project-C");
+  document.querySelector("form").reset();
 };
 
+const buildCard = (array, card, id) => {
+  let cardString = "";
+
+  for (let item of array) {
+    cardString += card(item);
+  }
+  printToDom(id, cardString);
+};
+
+const deleteProject = (e) => {
+  const targetType = (e.target.type);
+  const targetId = (e.target.id);
+  if (targetType === "button") {
+    const dProject = projects.findIndex((project) => project.id === targetId);
+    projects.splice(dProject, 1);
+  }
+  buildCard(projects, projectCard, "#project-C");
+};
+
+const projectEvent = () => {
+  document.querySelector("#project-C").addEventListener("click", deleteProject);
+};
 
 
 // *********************** END PROJECTS PAGE ***************************
@@ -325,6 +357,9 @@ const pageFinder = () => {
     profileCard();
 
   } else if (pageFile[0] === "projects.html") {
+    buildCard(projects, projectCard, "#project-C");
+    projectEvent();
+    projectForm()
     profileCard();
   } else {
     pinBuilder();
