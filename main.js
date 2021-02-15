@@ -7,8 +7,26 @@ const printToDom = (divId, textToPrint) => {
 };
 
 // ************* PACKAGES START *******************
-// Packages Array
-const packages = ["VSC", "SQL", "BOOTSTRAP", "GitHub", "JavaScript", "HTML", "CSS"];
+const package = [
+  {
+    name: "Martin",
+    gitName: "fimoefive",
+    package: "HTML",
+    id: 0,
+  },
+  {
+    name: "Nathan M.",
+    gitName: "nathanmartin5937",
+    package: "HTML",
+    id: 1,
+  },
+  {
+    name: "Nathan K.",
+    gitName: "nashvegasnate",
+    package: "CSS",
+    id: 2,
+  },
+];
 // Developer Array
 const devArray = [];
 // Deleted Developer Array
@@ -16,20 +34,21 @@ const deletedDevsArray = [];
 
 // Developer Packages Card Builder
 const devCardBuilder = () => {
-  let domString = "";
+  let packageString = "";
   // For Loop
   devArray.forEach((item, i) => {
-    domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
-                    <div class="card-body">
-                      <h5 ${item.name} class="card-text">Name: ${item.name}</h5>
-                      <p class="card-text">Profile: ${item.gitName}</p>
-                      <p class="card-text">Package: ${item.package}</p>
-                      <div id="html-icon"><img src="./images/html-bracket.png" alt="HTML Icon"></div>
-                      <button type="button" class="btn btn-danger" id="${i}" style="padding: 5px;">Delete</button>
-                    </div>
-                  </div>`;
+    packageString +=
+      `<div class="card my-2" style="width: 18rem;" id=${i}>
+        <div class="card-body">
+          <h5 ${item.name} class="card-text">Name: ${item.name}</h5>
+          <p class="card-text">Profile: ${item.gitName}</p>
+          <p class="card-text">Package: ${item.package}</p>
+          <div id="html-icon"><img src="./images/html-bracket.png" alt="HTML Icon"></div>
+          <button type="button" class="btn btn-danger" id="${i}" style="padding: 5px;">Delete</button>
+        </div>
+      </div>`;
   })
-  printToDom("#developers", domString);
+  printToDom("#developers", packageString);
 };
 
 const buttonClick = (e) => {
@@ -228,24 +247,46 @@ const pinnedEvents = () => {
 };
 // ************************END OVERVIEW PAGE************************ 
 
+const profileCard = () => {
+  let profileString = `
+<div class="cardProfile" style="display:block; float: left; width: 18rem;">
+    <img src="https://static.thenounproject.com/png/630729-200.png" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Profile</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Name:</li>
+      <li class="list-group-item">About:</li>
+      <li class="list-group-item">GitHub: </li>
+      <li class="list-group-item">Email: </li>
+    </ul>
+  </div>`;
+  printToDom("#profile", profileString);
+};
+
 const pageFinder = () => {
   const pageFile = location.pathname.split("/").slice(-1);
 
   if (pageFile[0] === "index.html") {
     pinBuilder();
     pinnedEvents();
+    profileCard();
   } else if (pageFile[0] === "repo.html") {
     createRepoCard();
     // getFormInfo();
+    profileCard();
     repoEvents();
   } else if (pageFile[0] === "packages.html") {
     devCardBuilder();
     packageEvents();
-  } else if (pageFile[0] === "projects.html") {
+    profileCard();
 
+  } else if (pageFile[0] === "projects.html") {
+    profileCard();
   } else {
     pinBuilder();
     pinnedEvents();
+    profileCard();
   }
 }
 

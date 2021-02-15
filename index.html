@@ -12,42 +12,43 @@
        
     <header>OVERVIEW</header>
 
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-dark p-4">
-        <ul>
-          <li class="nav-item"><a href="./index.html">Overview</a></li>
-          <li class="nav-item"><a href="./repo.html">Repositories</a></li>
-          <li class="nav-item"><a href="./packages.html">Packages</a></li>
-          <li class="nav-item"><a href="./projects.html">Projects</a></li>
-        </ul>
-      </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <h5 class="text-white h4">MENU</h5> 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-      
-      <div id="infoForm"> 
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <ul>
+      <li class="nav-item"><a href="./index.html">Overview</a></li>
+      <li class="nav-item"><a href="./repo.html">Repositories</a></li>
+      <li class="nav-item"><a href="./packages.html">Packages</a></li>
+      <li class="nav-item"><a href="./projects.html">Projects</a></li>
+    </ul>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <h5 class="text-white h4">MENU</h5>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+        <div id="profile"></div>
+        
+      <div id="infoForm">
         <form>
-          <h3 id="pinTitle">PINNED REPO'S</h3>
-          <div class="formTitle" style="display: block;">
+          <div class="formTitle">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" required>
           </div>
-          <div class="formLink" style="display: block;">
+          <div class="formLink">
             <label for="repoLink">Repo Link</label>
             <input type="text" class="form-control" id="repoLink" required>
           </div>
           <button type="submit" id="submitBtn">Submit</button>
         </form>
+        <div class="cardContainer" id="pins"></div>
       </div>
         
-      <div class="cardContainer" id="pins"></div>
-
     <footer>&copy;2021 SEAL TEAM 6</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>  

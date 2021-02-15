@@ -11,8 +11,9 @@ header {
 }
 
 footer {
-  display: flexbox;
-  text-align: start; 
+  display: flex;
+  text-align: start;
+  
 }
 
 /* *************PACKAGES************* */
@@ -106,9 +107,12 @@ footer {
 
 #pins {
   font-size: 20px;
+  margin: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-/* ************OVERVIEW************* */
+#profile {
+  padding: 10px;
+}
