@@ -77,6 +77,31 @@ footer {
   padding: 5px;
 }
 
+/* REPO STYLING HERE */
+
+#repoForm {
+  display: inline-flex;
+  flex-direction:column; 
+  width: 75%; 
+  border-style:inset; 
+  border-color:rgb(52, 124, 207); 
+  background-color: #7fa66f;
+  padding: 15px;
+}
+
+#name {
+  display: block;
+  justify-content: center;
+  width: 50%;
+}
+
+#desc {
+  display: block;
+  justify-content: center;
+  width: 75%;
+}
+
+
 /* ************OVERVIEW***********  */
 
 #infoForm {
