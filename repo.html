@@ -12,34 +12,42 @@
 </head>
 
 <body>
-  
-  <nav class="navigation">
-    <ul>
-      <li class="nav-item"><a href="./index.html">Overview</a></li>
-      <li class="nav-item"><a href="./repo.html">Repositories</a></li>
-      <li class="nav-item"><a href="./packages.html">Packages</a></li>
-      <li class="nav-item"><a href="./projects.html">Projects</a></li>
-    </ul>
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <ul>
+        <li class="nav-item"><a href="./index.html">Overview</a></li>
+        <li class="nav-item"><a href="./repo.html">Repositories</a></li>
+        <li class="nav-item"><a href="./packages.html">Packages</a></li>
+        <li class="nav-item"><a href="./projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <h5 class="text-white h4">MENU</h5> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
   </nav>
-  <header>REPOSITORY</header>
-
+  
+  <header>REPOSITORIES</header>
 
   <div class="container-xl" id="repos"></div>
-
-  
+    
   <div id="repoForm"> 
     <form id="newRepoForm">
-      <div style="display:block" class="mb-3">
+      <div class="mb-2">
         <label for="name" class="form-label">Enter Name of New Repository</label>
         <input type="text" class="form-control" placeholder="name" id="name" required>
         <label for="desc" class="form-label">Enter Description of Repository</label>
         <input type="text" class="form-control" placeholder="description" id="desc">
-        <button type="submit" id="enterBtn" class="btn btn-primary">Enter</button>
+        <button type="submit" style="margin: 5px 5px; border-color:blue" id="enterBtn" class="btn btn-primary">Enter</button>
       </div>
     </form>
   </div> 
-
-    <footer>&copy;2021 SEAL TEAM 6</footer>
+  
+  <footer>&copy;2021 SEAL TEAM 6</footer>
     
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

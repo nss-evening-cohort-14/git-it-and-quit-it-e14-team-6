@@ -134,7 +134,8 @@ const deletedRepos = [];
 const createRepoCard = () => {
   let domString = '';
   newRepo.forEach((item, i) => {
-    domString += `<div class="card m-2" style="width: 18rem; id=${i}">
+    domString += `<div class="card m-3" style="width: 50%; display: flex; border-style:inset; 
+                    border-color:rgb(52, 124, 207); id=${i}">
                     <div class="card-body">
                       <h5 class="card-title">${item.name}</h5>
                       <p class="card-text">${item.desc}</p>
