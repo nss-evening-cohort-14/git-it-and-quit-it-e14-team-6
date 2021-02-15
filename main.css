@@ -11,7 +11,7 @@ header {
 }
 
 footer {
-  display: flexbox;
+  display: flex;
   text-align: start;
 }
 
@@ -71,4 +71,7 @@ footer {
   font-weight: 700;
   font-size: 30px;
   padding: 5px;
+}
+#profile {
+  padding: 10px;
 }
