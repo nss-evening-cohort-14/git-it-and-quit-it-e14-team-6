@@ -14,6 +14,11 @@ Allows users to create repositories for storing code used as part of a project. 
 Packages page:
 The Packages page has a "Add Package" Event Button Click to display the input form for packages. I have a reset invoked function that clears out all the input fields after the text is submitted. My save package cards display under the "Packages" banner and the deleted package cards then display under a "Deleted Packages" banner. After all saved package cards have been deleted a display text and image pops up to inform the user that all saved cards have been deleted.
 
+Projects page: 
+I have three input fields for the project card form.
+Projects has three project cards that already render to the Dom when projects.html page loads. Within the projects array I have objects of my teammates projects in the projects array. By clicking the submit button a card generates in the form of your project.
+I also wrote a delete function for the project cards when clicking the delete button.
+
 # List of Contributors 
 https://github.com/nathanmartin5937
 https://github.com/fimoefive
