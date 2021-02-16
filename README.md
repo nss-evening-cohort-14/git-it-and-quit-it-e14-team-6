@@ -33,6 +33,9 @@ https://www.loom.com/share/66c306b351fc4d89a7dec7603aa63611
 Repository:
 https://www.loom.com/share/910b4ee490a547a8990f806afc51efb8
 
+Packages & Projects:
+https://www.loom.com/share/2eb5a0dd47354ac79d9dadc3f0ffd019
+
 # Link to Wireframe 
 https://www.figma.com/file/8vIX1yEXd2UxdWARbWqAje/GitSub?node-id=0%3A1
 
@@ -41,10 +44,3 @@ https://github.com/nss-evening-cohort-14/gitsub-team-6-git-it-and-quit-it/projec
 
 # Netlify
 https://git-it-and-quit-it.netlify.app/
-
-
-
-
-
-
-
