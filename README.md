@@ -26,26 +26,51 @@ https://github.com/nashvegasnate
 
 # Screenshots 
 Overview:
-https://nashvillesoftware.slack.com/files/U01ES0H21TQ/F01MUMZ36MV/image.png
+[
+https://user-images.githubusercontent.com/76969749/108152910-a5e08d80-709f-11eb-951f-e93f6f462769.png
+](url)
 
-https://nashvillesoftware.slack.com/files/U01ES0H21TQ/F01N2N44MBQ/image.png
+[
+https://user-images.githubusercontent.com/76969749/108152993-dfb19400-709f-11eb-8378-36619c8b300b.png
+](url)
 
 Repository:
-https://nashvillesoftware.slack.com/files/U01EYU2FP8B/F01N6AV5Q3U/repopage1.png
+[
+https://user-images.githubusercontent.com/76969749/108153027-f22bcd80-709f-11eb-8b01-ecad4d6356ac.png
+](url)
 
-https://nashvillesoftware.slack.com/files/U01EYU2FP8B/F01N38A4KN1/repopage2.png
+[
+https://user-images.githubusercontent.com/76969749/108153067-04a60700-70a0-11eb-954d-1c124bea26e7.png
+](url)
+
+[
+https://user-images.githubusercontent.com/76969749/108153305-85650300-70a0-11eb-8cc2-0bb7c5c6b1fd.png
+](url)
 
 Packages:
-https://nashvillesoftware.slack.com/files/UUZJKFH2Q/F01MRNH56GP/screen_shot_2021-02-15_at_6.37.36_pm.png
+[
+https://user-images.githubusercontent.com/76969749/108153358-9f064a80-70a0-11eb-81cb-21ee61d9bb2e.png
+](url)
 
-https://nashvillesoftware.slack.com/files/UUZJKFH2Q/F01NK4WEP4Z/screen_shot_2021-02-15_at_6.37.51_pm.png
+[
+https://user-images.githubusercontent.com/76969749/108153397-b1808400-70a0-11eb-9a9c-08aa3bdecf15.png
+](url)
 
-https://nashvillesoftware.slack.com/files/UUZJKFH2Q/F01MRNHDNG7/screen_shot_2021-02-15_at_6.38.01_pm.png
+[
+https://user-images.githubusercontent.com/76969749/108153456-ce1cbc00-70a0-11eb-8cc9-80c6d45b4280.png
+](url)
 
 Projects:
-https://nashvillesoftware.slack.com/files/U01ES0H21TQ/F01NN6NUJD7/image.png
+[
+https://user-images.githubusercontent.com/76969749/108153484-decd3200-70a0-11eb-99ca-16f4a6b3472f.png
+](url)
 
-https://nashvillesoftware.slack.com/files/U01ES0H21TQ/F01N2Q8T6DC/image.png
+test
+[
+![image](https://user-images.githubusercontent.com/76969749/108153521-f5738900-70a0-11eb-9b5f-48fbb5c34b2b.png)
+](url)
+
+https://user-images.githubusercontent.com/76969749/108153556-06bc9580-70a1-11eb-8e9e-44aa0440317f.png
 
 # Loom Walkthrough Videos 
 Overview:
